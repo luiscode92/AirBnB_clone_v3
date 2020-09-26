@@ -10,7 +10,7 @@ from flask import Flask, render_template
 import uuid
 app = Flask(__name__)
 # app.jinja_env.trim_blocks = True
-# app.jinja_env.lstrip_blocks = True
+# app.jinja_env.lstrip_blocks = True4
 
 
 @app.teardown_appcontext
@@ -36,7 +36,7 @@ def hbnb():
     places = sorted(places, key=lambda k: k.name)
 
     cache_id = uuid.uuid4()
-    return render_template('0-hbnb.html',
+    return render_template('1-hbnb.html',
                            states=st_ct,
                            amenities=amenities,
                            places=places,
