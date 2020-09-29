@@ -31,16 +31,38 @@ button:hover {
     font-weight: 600;
 }
 .filters h3 {
-    margin-left: 15%;
+    margin-left: 46px;
     margin-bottom: 0;
     font-weight: 600;
 }
-.filters h4 {
-    margin-left: 15%;
+
+.locations h4 {
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-left: 46px;
     margin-top: 0;
     font-weight: 400;
     font-size: 14px;
 }
+
+.amenities h4 {
+    height: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 300px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-left: 46px;
+    margin-top: 0;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 .locations {
     height: 100%;
     width: 25%;

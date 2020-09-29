@@ -1,3 +1,4 @@
+const $ = window.$;
 $(document).ready(function () {
   const amenities = {};
   $('input:checkbox').click(function () {
