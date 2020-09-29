@@ -150,6 +150,14 @@ EOF  all  create  destroy  help  quit  show  update
 (hbnb) quit
 ```
 
+# Web dynamic
+
+Now the information is not connected directly from the backend, and the front-end back-end services has been separated into two different entities.
+
+Front-end: Communicates with the Back-end using a REST-API that runs on Javascript.
+
+Back-end: Creates the API that shows the database information.
+
 ## Bugs
 No known bugs at this time. 
 
@@ -158,6 +166,9 @@ Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twit
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)  
 Jhoan Zamora - [Github](https://github.com/jzamora5) / [Twitter](https://twitter.com/JhoanZamora10)  
 David Ovalle - [Github](https://github.com/Nukemenonai) / [Twitter](https://twitter.com/disartDave)
+Luis Sanjuan - [Github](https://github.com/luiscode92) / [Twitter](https://twitter.com/lsanjuan92)
+David Orejuela - [Github](https://github.com/daorejuela1) / [Twitter](https://twitter.com/DavidOrejuela14)
+
 
 Second part of Airbnb: Joann Vuong
 ## License
