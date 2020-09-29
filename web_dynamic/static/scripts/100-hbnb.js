@@ -1,8 +1,8 @@
 const $ = window.$;
 $(document).ready(function () {
-  const amenities = {};
   const search = {};
-  $('input:checkbox').click(function () {
+  const amenities = {};
+  $('.amenities input:checkbox').click(function () {
     $(this).each(function () {
       if (this.checked) {
         amenities[$(this).data('id')] = $(this).data('name');
@@ -14,6 +14,44 @@ $(document).ready(function () {
       $('.amenities h4').text(Object.values(amenities).join(', '));
     } else {
       $('.amenities h4').html('&nbsp');
+    }
+  });
+  const states = {};
+  $('.locations li #states_checkbox').click(function () {
+    $(this).each(function () {
+      if (this.checked) {
+        console.log($(this).attr('data-name'));
+        states[$(this).data('id')] = $(this).data('name');
+      } else {
+        delete states[$(this).data('id')];
+      }
+    });
+
+    const StatesAndCities = Object.assign({}, cities, states);
+    if (Object.values(StatesAndCities).length > 0) {
+      $('.locations h4').text(Object.values(StatesAndCities).join(', '));
+    } else {
+      $('.locations h4').html('&nbsp');
+    }
+  });
+
+  const cities = {};
+  $('.locations li #city_checkbox').click(function () {
+    console.log(cities);
+    $(this).each(function () {
+      if (this.checked) {
+        cities[$(this).data('id')] = $(this).data('name');
+      } else {
+        delete cities[$(this).data('id')];
+      }
+    });
+
+    const StatesAndCities = Object.assign({}, cities, states);
+    console.log(cities);
+    if (Object.values(StatesAndCities).length > 0) {
+      $('.locations h4').text(Object.values(StatesAndCities).join(', '));
+    } else {
+      $('.locations h4').html('&nbsp');
     }
   });
 
@@ -54,9 +92,11 @@ $(document).ready(function () {
       });
     }
   });
-
   $('button').click(function () {
     search.amenities = Object.keys(amenities);
+    search.states = Object.keys(states);
+    search.cities = Object.keys(cities);
+    console.log(search);
     $.ajax({
       url: 'http://127.0.0.1:5001/api/v1/places_search/',
       type: 'POST',

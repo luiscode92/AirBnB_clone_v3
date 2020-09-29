@@ -16,7 +16,7 @@ $(document).ready(function () {
     }
   });
 
-  $.get('http://0.0.0.0:5001/api/v1/status/', function (data, status) {
+  $.get('http://127.0.0.1:5001/api/v1/status/', function (data, status) {
     console.log(data);
     if (data.status === 'OK') {
       $('DIV#api_status').addClass('available');
@@ -28,7 +28,7 @@ $(document).ready(function () {
   });
 
   $.ajax({
-    url: 'http://0.0.0.0:5001/api/v1/places_search/',
+    url: 'http://127.0.0.1:5001/api/v1/places_search/',
     type: 'POST',
     data: '{}',
     contentType: 'application/json; charset=utf-8',

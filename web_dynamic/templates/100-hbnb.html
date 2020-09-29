@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <SCRIPT src="https://code.jquery.com/jquery-3.2.1.min.js"></SCRIPT>
-    <SCRIPT type="text/javascript" src="{{ url_for('static', filename='scripts/4-hbnb.js') }}?{{ cache_id }}"></SCRIPT>
+    <SCRIPT type="text/javascript" src="{{ url_for('static', filename='scripts/100-hbnb.js') }}?{{ cache_id }}"></SCRIPT>
 	<link rel="stylesheet" type="text/css" href="../static/styles/4-common.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-header.css?{{ cache_id }}">
     <link rel="stylesheet" type="text/css" href="../static/styles/3-footer.css?{{ cache_id }}">
@@ -25,11 +25,11 @@
 	  <div class="popover">
 	    <ul>
 	      {% for state in states %}
-	      <li>
-		<h2>{{ state[0].name }}:</h2>
+	      <li> <INPUT id="states_checkbox" type="checkbox" style="margin-right: 10px" data-id="{{ state[0].id }}" data-name="{{ state[0].name }}">
+		<h2 style="display: inline-block">{{ state[0].name }}:</h2>
 		<ul>
 		  {% for city in state[1] %}
-		  <li>{{ city.name }}</li>
+		  <li> <INPUT id="city_checkbox" type="checkbox" style="margin-right: 10px" data-id="{{ city.id }}" data-name="{{ city.name }}"> {{ city.name }}</li>
 		  {% endfor %}
 		</ul>
 	      </li>
