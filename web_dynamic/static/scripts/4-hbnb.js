@@ -55,10 +55,11 @@ $(document).ready(function () {
   });
 
   $('button').click(function () {
+    search.amenities = Object.keys(amenities);
     $.ajax({
       url: 'http://0.0.0.0:5001/api/v1/places_search/',
       type: 'POST',
-      data: '{}',
+      data: JSON.stringify(search),
       contentType: 'application/json; charset=utf-8',
       dataType: 'json',
       success: function (dataset) {
